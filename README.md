@@ -1,4 +1,4 @@
-# ZEIRD Token ⚡ — Official Repository
+# ZAIRD Token ⚡ — Official Repository
 
 Welcome to the official repository of **ZIRD**, the hyper-dynamic speed and performance engine of our decentralized blockchain ecosystem. This protocol is engineered to synchronize high-frequency trading psychology, Web3 arcade gaming, and systematic asset rebalancing.
 
