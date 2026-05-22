@@ -8,8 +8,12 @@ Welcome to the official repository of **ZIRD**, the hyper-dynamic speed and perf
 
 ZEIRD operates with a highly concentrated, secure, and audited liquidity structure designed to prevent external manipulation and maximize scarcity.
 
+[ZAIRD Token](https://app.binance.com/uni-qr/web3-token-details?utm_medium=share&tokenCA=0x84027d2b2f269bfd39598b0b074dbccf48634549&binanceChainId=56&chain=bsc)
+---
+---
+
 ### 🔒 Core Protocol Addresses
-* **Official Liquidity Pool Pair (Pancakeswap V2):** `0x191188dF425197c0265C79EF62eC647194e7EA42`
+* **Official Liquidity Pool Pair (Pancakeswap V2):** `0xC17Cf3b889D9476eE6b2B74428bB3FDf55894B76`
 * **Base Asset Pair:** ZEIRD/WBNB
 
 ### 📈 Tokenomics & Holder Concentration Analysis
@@ -61,8 +65,16 @@ $$\text{Scarcity Ratio } (ZIRD) = \frac{100}{900,000} \cdot 100 = 0.0111\% \text
 
 Bienvenido al repositorio oficial de **ZIRD**, el motor hiperdinámico de velocidad y rendimiento de nuestro ecosistema blockchain descentralizado. Este protocolo está diseñado para sincronizar la psicología del trading de alta frecuencia, los juegos arcade Web3 y el rebalanceo sistemático de activos.
 
+---
+---
+
+[ZAIRD Token](https://app.binance.com/uni-qr/web3-token-details?utm_medium=share&tokenCA=0x84027d2b2f269bfd39598b0b074dbccf48634549&binanceChainId=56&chain=bsc)
+
+---
+---
+
 ### 🔒 Direcciones Clave del Protocolo
-* **Par Oficial del Pool de Liquidez (Pancakeswap V2):** `0x191188dF425197c0265C79EF62eC647194e7EA42`
+* **Par Oficial del Pool de Liquidez (Pancakeswap V2):** `0xC17Cf3b889D9476eE6b2B74428bB3FDf55894B76`
 * **Activo Base del Par:** ZIRD/WBNB
 
 ### 📈 Tokenomics y Análisis de Concentración de Holders
