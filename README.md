@@ -1,71 +1,45 @@
 ![logo zaird](https://raw.githubusercontent.com/figueredo56/ZIRD-infinito-/178cb6d8cae49079bf492586182ac1b238e67e5e/CC_20260522_154445.svg)
 
-# Z.INFINIX Token ⚡ — Official Repository
+# POOL de liquidez V2 de ZARD ⚡ — Official Repository
 
-Welcome to the official repository of **ZAIRD**, the hyper-dynamic speed and performance engine of our decentralized blockchain ecosystem. This protocol is engineered to synchronize high-frequency trading psychology, Web3 arcade gaming, and systematic asset rebalancing.
+Welcome to the official repository
 
----
+# Especificaciones Técnicas: PancakePair (ZARD/WBNB)
 
-## 📊 Market & Liquidity Architecture
+Este contrato implementa el par de liquidez estándar de PancakeSwap V2. La integridad del mercado se mantiene mediante el invariante de producto constante.
 
-Z. operates with a highly concentrated, secure, and audited liquidity structure designed to prevent external manipulation and maximize scarcity.
+## 📐 Invariante del Producto Constante
+El equilibrio del pool se rige por la ecuación fundamental de Uniswap:
 
-[ZAIRD Token](https://app.binance.com/uni-qr/web3-token-details?utm_medium=share&tokenCA=0x84027d2b2f269bfd39598b0b074dbccf48634549&binanceChainId=56&chain=bsc)
----
----
+$$x \cdot y = k$$
 
-### 🔒 Core Protocol Addresses
-* **Official Liquidity Pool Pair (Pancakeswap V2):** `0xC17Cf3b889D9476eE6b2B74428bB3FDf55894B76`
-* **Base Asset Pair:** ZAIRD/WBNB
+Donde:
+*   $x$: Reserva del Token 0 (ZARD).
+*   $y$: Reserva del Token 1 (WBNB).
+*   $k$: Producto constante que debe permanecer inalterado o aumentar tras cada operación.
 
-### 📈 Tokenomics & Holder Concentration Analysis
-Following strict institutional metrics tracked via on-chain analytics (`Ave.ai` data integration):
-* **Total Supply:** $100\text{ ZIRD}$ (Ultra-scarce supply engine).
-* **Holder Concentration Tier:** * **Top 1-5 Holders:** $100\%$ control (Strategically retained for ecosystem stability and automated arcade vault distribution).
-  * **Crab Tier ($96.25\%$ Supply):** $2\text{ wallets}$ managing protocol liquidity and ecosystem reserves.
-  * **Shrimp Tier ($3.75\%$ Supply):** Distributed across retail participants and active platform gamers.
+## ⚙️ Métodos Críticos de Ejecución
 
----
+| Función | Descripción Técnica | Modificador |
+| :--- | :--- | :--- |
+| `mint(address to)` | Emite tokens LP a cambio de aportar liquidez al pool. | `lock` |
+| `burn(address to)` | Quema tokens LP y retira la participación proporcional. | `lock` |
+| `swap(...)` | Ejecuta el intercambio de tokens bajo el modelo de $k$. | `lock` |
+| `sync()` | Sincroniza las reservas del contrato con los saldos reales. | `lock` |
 
-## 🌀 The Triquetra Ecosystem Integration
+## 🛡 Mecanismos de Seguridad
+*   **Reentrancy Guard**: El modificador `lock` impide ataques de reentrada durante la ejecución de las funciones críticas (`mint`, `burn`, `swap`).
+*   **Validación de Saldo (K)**: En la función `swap`, se aplica la verificación del invariante:
+    $$\text{balance}_{0, \text{adj}} \cdot \text{balance}_{1, \text{adj}} \geq \text{reserve}_0 \cdot \text{reserve}_1 \cdot 10000^2$$
+    *Esto garantiza que la comisión del 0.25% se mantenga dentro del pool.*
 
-Our ecosystem functions as a unified financial matrix where liquidity, speed, and utility balance each other dynamically. The distribution of the supply across the master tokens defines the protocol's mathematical equilibrium.
-
-### 🧮 Ecosystem Supply Equations
-
-The relationship between the core pillars of the ecosystem—
-**ZAARD** (The Foundation), 
-**PANGA** (The Creative Drive),
-**ZARED** (The Evolution), 
-**Z.** (The Velocity)—is governed by the following mathematical distribution:
-
-$$Supply_{Total} = \begin{cases} 
-
-\mathbf{ZAARD:} & 900,000 \text{tokens}\\
-
-\mathbf{PANGA:} & 90,000 \text{tokens}\\
-
-\mathbf{ZARED:} & 750 \text{tokens}\\
-
-\mathbf{ZAIRD:} & 100 \text{tokens}\\
-
-end{cases}$$
-
-The systemic asset ratio model between the foundational supply ($S_{Zaard}$), the creative governance drive ($S_{Panga}$), and the high-velocity execution tokens ($S_{Zared}$, $S_{Zird}$) establishes an aggressive scarcity layer:
-
-$$\frac{S_{Zaard}}{S_{Panga}} = 10 \implies S_{Zaard} = 10 \cdot S_{Panga}$$
-
-$$\text{Scarcity Ratio } (ZAIRD) = \frac{100}{900,000} \cdot 100 = 0.0111\% \text{ of the foundational supply.}$$
+## 🔢 Lógica de Precios
+El contrato utiliza acumuladores de precio para permitir la creación de **Oráculos de Precio (TWAP)**:
+*   `price0CumulativeLast`: Suma del precio del token 0 multiplicado por el tiempo transcurrido.
+*   `price1CumulativeLast`: Suma del precio del token 1 multiplicado por el tiempo transcurrido.
 
 ---
----
-
----
-
-<a name="español"></a>
-## 📊 Arquitectura de Mercado y Liquidez (Español)
-
-Bienvenido al repositorio oficial de **ZAIRD**, el motor hiperdinámico de velocidad y rendimiento de nuestro ecosistema blockchain descentralizado. Este protocolo está diseñado para sincronizar la psicología del trading de alta frecuencia, los juegos arcade Web3 y el rebalanceo sistemático de activos.
+*Nota: Este contrato es inmutable y estándar en el ecosistema DeFi. Toda liquidez está protegida por los contratos de bloqueo de PinkSale.*
 
 ---
 ---
@@ -75,56 +49,6 @@ Bienvenido al repositorio oficial de **ZAIRD**, el motor hiperdinámico de veloc
 ---
 ---
 
-### 🔒 Direcciones Clave del Protocolo
-* **Par Oficial del Pool de Liquidez (Pancakeswap V2):** `0xC17Cf3b889D9476eE6b2B74428bB3FDf55894B76`
-* **Activo Base del Par:** ZAIRD/WBNB
-
-### 📈 Tokenomics y Análisis de Concentración de Holders
-Siguiendo métricas institucionales estrictas rastreadas mediante análisis on-chain (datos integrados de `Ave.ai`):
-* **Suministro Total:** $100\text{ ZIRD}$ (Motor de suministro ultra escaso).
-* **Nivel de Concentración de Holders:**
-  * **Top 1-5 Holders:** $100\%$ de control (Retenido estratégicamente para la estabilidad del ecosistema y la distribución automatizada de bóvedas de arcade).
-  * **Nivel Cangrejo (Crab Tier - $96.25\%$ del Suministro):** $2\text{ billeteras}$ que gestionan la liquidez del protocolo y las reservas del ecosistema.
-  * **Nivel Camarón (Shrimp Tier - $3.75\%$ del Suministro):** Distribuido entre participantes minoristas y jugadores activos de la plataforma.
-
----
-
-## 🌀 Integración del Ecosistema Triquetra
-
-Nuestro ecosistema funciona como una matriz financiera unificada donde la liquidez, la velocidad y la utilidad se equilibran dinámicamente. La distribución del suministro entre los tokens maestros define el equilibrio matemático del protocolo.
-
-### 🧮 Ecuaciones de Suministro del Ecosistema
-
-La relación entre los pilares fundamentales del ecosistema—
-**ZAARD** (La Fundación),
-**PANGA** (La Fuerza Creativa),
-**ZARED** (La Evolución)
-**ZAIRD** (La Velocidad)
-—está gobernada por la siguiente distribución matemática:
-
-$$Suministro_{Total} = \begin{cases}
- 
-\mathbf{ZAARD:} & 900,000 \text{tokens}\\
-
-\mathbf{PANGA:} & 90,000 \text{ tokens}\\
-
-\mathbf{ZARED:} & 750 \text{ tokens}\\
-
-\mathbf{ZAIRD:} & 100 \text{ tokens}\\
-
-end{cases}$$
-
-El modelo de ratio de activos sistémicos entre el suministro fundacional ($S_{Zaard}$), el impulso de gobernanza creativa ($S_{Panga}$) y los tokens de ejecución de alta velocidad ($S_{Zared}$, $S_{Zird}$) establece una capa de escasez agresiva:
-
-$$\frac{S_{Zaard}}{S_{Panga}} = 10 \implies S_{Zaard} = 10 \cdot S_{Panga}$$
-
-$$\text{Ratio de Escasez } (ZAIRD) = \frac{100}{900,000} \cdot 100 = 0.0111\% \text{ del suministro fundacional.}$$
-
----
-
-> ⚠️ **Nota de Mitigación de Riesgos y Gobernanza:** La distribución de holders on-chain se monitorea continuamente. El $96.25\%$ de la asignación permanece estrictamente bloqueado o desplegado en la dirección oficial del pool de Pancakeswap (`0x1911...EA42`) para salvaguardar el ecosistema contra actores maliciosos y garantizar la sostenibilidad a largo plazo.
->
-> 
 ## 🌐 Our Official Digital Presence
 
 Stay connected with the true source of ZAARD innovation.
