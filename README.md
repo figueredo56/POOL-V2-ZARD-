@@ -1,4 +1,3 @@
-![logo zaird](https://raw.githubusercontent.com/figueredo56/ZIRD-infinito-/178cb6d8cae49079bf492586182ac1b238e67e5e/CC_20260522_154445.svg)
 
 # POOL de liquidez V2 de ZARD ⚡ — Official Repository
 
