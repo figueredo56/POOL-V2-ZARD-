@@ -43,7 +43,7 @@ El contrato utiliza acumuladores de precio para permitir la creación de **Orác
 ---
 ---
 
-[ZAIRD Token](https://app.binance.com/uni-qr/web3-token-details?utm_medium=share&tokenCA=0x84027d2b2f269bfd39598b0b074dbccf48634549&binanceChainId=56&chain=bsc)
+[ZARD Token](https://app.binance.com/uni-qr/web3-token-details?utm_medium=share&tokenCA=0xb133033d44b61746c022fb25c070c5599e55181e&binanceChainId=56&chain=bsc)
 
 ---
 ---
