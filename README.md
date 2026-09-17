@@ -4,6 +4,10 @@ Welcome to the official repository.
 
 ---
 
+<div align="center">
+  <img src="https://raw.githubusercontent.com/figueredo56/POOL-V2-ZARD-/refs/heads/main/Screenshot_20260917-151053_1.png" alt="Captura de pantalla de la Pool ZARD" width="800"/>
+</div>
+
 ## 📌 Direcciones de Contratos (Smart Contracts)
 
 * **Contrato del Token ZAARD:** `0x973ba2c1dccd0820f1e026d6b1f01c55c4085d38`
