@@ -65,7 +65,7 @@ El contrato utiliza acumuladores de precio para permitir la creación de **Orác
 Stay connected with the true source of ZAARD innovation.
 
 * **🏠 Official Website:** [ZAARD website](https://figueredo56.github.io/DAIoficial/)
-* **🐦 Official X (Twitter):** [@ZAARD_666](https://x.com/ZAARD_ALX)
+* **🐦 Official X (Twitter):** [@ZAARD_ALX](https://x.com/ZAARD_ALX)
 * **💰 Binance User Profile (Founder/DAO):** [View on Binance](https://account.binance.com/register?ref=776427353&?registerChannel=user_center) (User ref: 776427353)
 ## 👤 Founder & Lead Develop
 Desarrollado por **Aracelis (Panga)** - Founder de ZAARD INNOVATION.
