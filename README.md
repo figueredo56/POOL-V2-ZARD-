@@ -11,7 +11,7 @@ Welcome to the official repository.
 ## 📌 Direcciones de Contratos (Smart Contracts)
 
 * **Contrato del Token ZAARD:** `0x973ba2c1dccd0820f1e026d6b1f01c55c4085d38`
-* **Contrato de Pool de Liquidez (ZAARD/WBNB):** `0x046dD1d5C62a6DFFAfAA4886B3004Fed7d409Dd3`
+* **Contrato de Pool de Liquidez (ZAARD/WBNB):** `0x046dd1d5c62a6dffafaa4886b3004fed7d409dd3`
 
 ---
 
